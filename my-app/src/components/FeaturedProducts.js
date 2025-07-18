@@ -81,7 +81,7 @@ export default function CategoriesGrid() {
           width: 300,
           backgroundColor: 'rgba(255, 255, 255, 0.9)',
           borderRadius: 2,
-          p: 3,
+          padding: 3 ,
           textAlign: 'center',
           
         }}>
