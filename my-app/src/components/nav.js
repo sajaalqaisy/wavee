@@ -7,14 +7,14 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-
+import '../css/nav.css'
 export default function ButtonAppBar() {
   return (
     
 
 
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{backgroundColor:"transparent"}}       position="absolute">
+      <AppBar sx={{  background: 'rgba(0, 0, 0, 0.3)'}}   position="absolute">
         <Toolbar>
           <IconButton
             size="large"
@@ -23,10 +23,13 @@ export default function ButtonAppBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+          
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link className='navlink' to="/">Home</Link>
+          </Typography>
+           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link className='navlink' to="/shop">shop</Link>
           </Typography>
          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link className='navlink' to="/collection">collection</Link>
@@ -34,9 +37,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link className='navlink' to="/contact">contact</Link>
           </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link className='navlink' to="/shop">shop</Link>
-          </Typography>
+         
         </Toolbar>
       </AppBar>
     </Box>
