@@ -5,7 +5,9 @@ import Shop from './components/shop';
 import Home from './components/home';
 import Collection from './components/collection'
 import Contact from './components/contact'
+import Footer from './components/footer'
 import CategoriesGrid from './components/FeaturedProducts'
+import CardRevirw from './components/reviwes'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 function App() {
   return (
@@ -13,13 +15,18 @@ function App() {
       <Nav />
      
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={
+          <>
+            <Home />
+            <CategoriesGrid />
+            <CardRevirw />
+          </>
+        } />
         <Route path="/shop" element={<Shop />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      
-     <CategoriesGrid/>
+     <Footer/>
     </BrowserRouter>
       
 

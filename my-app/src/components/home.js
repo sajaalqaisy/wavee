@@ -1,10 +1,12 @@
 import React from 'react';
 import photo from '../media/photo.png';
 import '../css/home.css'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
- 
+  
   return (
+   
     <div
       style={{
         backgroundImage: `url(${photo})`,
@@ -14,7 +16,8 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',        color: 'white',
+        alignItems: 'center',     
+        color: 'white',
         textShadow: '1px 1px 4px rgba(0,0,0,0.7)',
       }}
     >
@@ -22,7 +25,8 @@ export default function Home() {
       <p style={{ fontSize: '40px' , fontFamily: 'serif' }}>YOUR SUMMER STARTS HERE</p>
       <p  style={{ fontSize: '30px' , fontFamily: 'cursive'}}>Stay Cool. Stay Stylish</p>
       
-      <a href="/shop" style={{
+      <Link style={{
+        position:'relative',
         marginLeft: '220px',
         padding: '12px 28px',
         backgroundColor: '#ffffffcc',
@@ -31,11 +35,12 @@ export default function Home() {
         textDecoration: 'none',
         fontWeight: 'bold',
         
-      }}>
-        Shop Now
-      </a>
+      }} to="/shop"> Shop Now</Link>
+      
     </div>
+    
     </div>
+    
   );
 };
 
