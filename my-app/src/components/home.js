@@ -14,8 +14,7 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
+        alignItems: 'center',        color: 'white',
         textShadow: '1px 1px 4px rgba(0,0,0,0.7)',
       }}
     >
