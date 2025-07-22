@@ -45,15 +45,15 @@ export default function Contact() {
                
               }}
             >
-    <div className="contact-container">
-      <div className="contact-info">
+    <div className="contact">
+      <div className="info">
         <h2>Let's Talk</h2>
         <p>
           Have questions, feedback, Fill out the form and we’ll get back to you shortly.
         </p>
         <br></br>
         <p>
-            📍 Address:  Amman, Jordan  
+            📍 Address:  Irbid , Jordan  
         </p>
         <p>
           📞 Phone:0799714064
@@ -63,7 +63,7 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="contact-form">
+      <div className="form">
         <form
           onSubmit={(e) => {
             e.preventDefault();

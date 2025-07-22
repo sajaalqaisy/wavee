@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './components/nav'
 import Shop from './components/shop';
 import Home from './components/home';
-import Collection from './components/collection'
+import ChillCorner from './components/ChillCorner'
 import Contact from './components/contact'
 import Footer from './components/footer'
 import CategoriesGrid from './components/FeaturedProducts'
@@ -23,7 +23,7 @@ function App() {
           </>
         } />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/collection" element={<Collection />} />
+        <Route path="/ChillCorner" element={<ChillCorner />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
      <Footer/>
