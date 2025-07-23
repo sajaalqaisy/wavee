@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import image2 from '../media/image2.png';
 
 const products = [
-  { id: 1, name: 'Vanilla Ice Cream', price: 2.5, category: 'icecream', img: 'https://i.pinimg.com/736x/f3/41/d4/f341d485091b685262871875ea681469.jpg' },
-  { id: 2, name: 'Strawberry Ice Cream', price: 2.5, category: 'icecream', img: 'https://i.pinimg.com/736x/21/d2/05/21d2051d78e7242c0cbcdbc3f1f5b501.jpg' },
-  { id: 3, name: 'Mango Juice', price: 3.0, category: 'juice', img: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=400&q=80' },
-  { id: 4, name: 'Orange Juice', price: 2.8, category: 'juice', img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80' },
-  { id: 5, name: 'Chocolate Ice Cream', price: 3.0, category: 'icecream', img: 'https://i.pinimg.com/736x/8f/0a/a8/8f0aa8b0c91e79099723e364febe9f37.jpg' },
-  { id: 6, name: 'Pineapple Juice', price: 3.2, category: 'juice', img: 'https://images.unsplash.com/photo-1572441710217-6eaa50d0c998?auto=format&fit=crop&w=400&q=80' },
+  { id: 1, name: 'BlueBerry Ice Cream', price: 3.2, category: 'icecream', img: "https://i.pinimg.com/736x/72/b5/00/72b500540780561c395aba6e44a89d47.jpg" },
+  { id: 2, name: 'Vanilla Ice Cream', price: 2.5, category: 'icecream', img: "https://i.pinimg.com/736x/0b/59/8a/0b598a38331d0edd578b2b41fde779c0.jpg" },
+  { id: 3, name: 'Chocolate Ice Cream', price: 3.0, category: 'icecream', img: "https://i.pinimg.com/736x/f3/41/d4/f341d485091b685262871875ea681469.jpg" },
+  {id: 4, name: 'Pistachio Ice Cream', price: 2.8, category: 'icecream', img: 'https://i.pinimg.com/736x/85/8d/56/858d5624a6799aabfc83b25e97ad4a9b.jpg' } ,
+  { id: 5, name: 'Strawberry Ice Cream', price: 2.5, category: 'icecream', img: "https://i.pinimg.com/736x/21/d2/05/21d2051d78e7242c0cbcdbc3f1f5b501.jpg" },
+  { id: 6, name: 'Mango Juice', price: 3.0, category: 'juice', img: 'https://previews.123rf.com/images/jenifoto/jenifoto1704/jenifoto170400104/77066586-healthy-mango-smoothie-in-a-glass-with-mint-and-straw-isolated-on-white.jpg' },
+  { id: 7, name: 'Orange Juice', price: 2.8, category: 'juice', img: 'https://3f4c2184e060ce99111b-f8c0985c8cb63a71df5cb7fd729edcab.ssl.cf2.rackcdn.com/media/15729/mango-orangesmoothies.jpg' },
+  { id: 8, name: 'Strawberry Juice', price: 3.2, category: 'juice', img: 'https://i.pinimg.com/736x/76/fc/b4/76fcb4ddab1229d4cccedee97d648c6f.jpg' },
+  {id: 9, name: 'lemon mint Juice', price: 2.8, category: 'juice', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2fYtW7zMpn7u0SG9iT0q1HHTTONPorG2-pPx0qUMh3Mv7T7cYbjktjdKHKTiyKl43FZ0&usqp=CAU' },
+  {id: 10, name: 'BlueBerry Juice', price: 2.8, category: 'juice', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbOPUzvYamNPHB59UrXxM2-jnRwGp-qCaVX2l3EHHMDwhBzuNjjTFZCjAw03LL9vqhPZA&usqp=CAU' },
+  
 ];
 
 export default function ChillCorner() {
@@ -83,7 +88,7 @@ export default function ChillCorner() {
             <img
               src={product.img}
               alt={product.name}
-              style={{ width: '100%', height: 140, objectFit: 'cover', borderRadius: '8px' }}
+              style={{ width: '100%', height: 160, objectFit: 'cover', borderRadius: '8px' }}
             />
             <h3 style={{ color: '#026f99', margin: '15px 0 5px' }}>{product.name}</h3>
             <p style={{ fontWeight: 'bold' }}>{product.price}$</p>
@@ -98,7 +103,7 @@ export default function ChillCorner() {
                   cursor: 'pointer',
                   borderRadius: 6,
                   border: 'none',
-                  backgroundColor: '#0288d1',
+                  backgroundColor: '#cdd2d4ff',
                   color: 'white',
                 }}
               >
@@ -113,7 +118,7 @@ export default function ChillCorner() {
                   cursor: 'pointer',
                   borderRadius: 6,
                   border: 'none',
-                  backgroundColor: '#0288d1',
+                  backgroundColor: '#cdd2d4ff',
                   color: 'white',
                 }}
               >
@@ -132,7 +137,7 @@ export default function ChillCorner() {
                 cursor: 'pointer',
                 width: '100%',
               }}
-              onClick={() => alert(`You ordered ${counts[product.id] || 0} x ${product.name}`)}
+              onClick={() => alert(`You ordered ${counts[product.id] || 0} , ${product.name}`)}
             >
               Order Now
             </button>

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {Box, Grid, Typography, Button, IconButton} from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import image2 from '../media/image2.png';
 
 const products = [
@@ -20,24 +18,22 @@ const products = [
 
 export default function Shop() {
   const [category, setCategory] = useState('swimwear'); 
-  const [quantities, setQuantities] = useState({});
-  const [cart, setCart] = useState([]);
-
-  const handleQuantityChange = (id, change) => {
-    setQuantities((prev) => {
-      const current = prev[id] || 1;
-      const newQty = Math.max(0, current + change);
-      return { ...prev, [id]: newQty };
-    });
+   const [counts, setCounts] = useState({});
+ const increment = (id) => {
+    setCounts(prev => ({
+      ...prev,
+      [id]: (prev[id] || 0) + 1,
+    }));
   };
 
-  const handleAddToCart = (product) => {
-    const quantity = quantities[product.id] || 1;
-    setCart((prev) => [...prev, { ...product, quantity }]);
-    alert(`${product.name} added to cart!`);
+  const decrement = (id) => {
+    setCounts(prev => ({
+      ...prev,
+      [id]: prev[id] > 0 ? prev[id] - 1 : 0,
+    }));
   };
 
-  const filteredProducts = products.filter((p) => p.category === category);
+  const filteredProducts = products.filter((products) => products.category === category);
 
   return (
     <div
@@ -109,29 +105,61 @@ export default function Shop() {
                   ${product.price}
                 </Typography>
 
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 2 }}>
-                  <IconButton onClick={() => handleQuantityChange(product.id, -1)}>
-                    <RemoveIcon />
-                  </IconButton>
-                  <Typography sx={{ mx: 2 }}>
-                    {quantities[product.id] || 1}
-                  </Typography>
-                  <IconButton onClick={() => handleQuantityChange(product.id, 1)}>
-                    <AddIcon />
-                  </IconButton>
-                </Box>
+                
 
                 
-                <Button
-                  variant="contained"
-                  fullWidth
-                  sx={{ backgroundColor: '#004c8c' }}
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Add to Cart
-                </Button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 10 }}>
+              <button
+                onClick={() => decrement(product.id)}
+                style={{
+                  padding: '5px 10px',
+                  fontSize: 18,
+                  cursor: 'pointer',
+                  borderRadius: 6,
+                  border: 'none',
+                  backgroundColor: '#cdd2d4ff',
+                  color: 'white',
+                }}
+              >
+                -
+              </button>
+              <span style={{ minWidth: 20, textAlign: 'center', fontWeight: 'bold' }}>{counts[product.id] || 0}</span>
+              <button
+                onClick={() => increment(product.id)}
+                style={{
+                  padding: '5px 10px',
+                  fontSize: 18,
+                  cursor: 'pointer',
+                  borderRadius: 6,
+                  border: 'none',
+                  backgroundColor: '#cdd2d4ff',
+                  color: 'white',
+                  
+                }}
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              style={{
+                marginTop: 10,
+                padding: '8px 15px',
+                backgroundColor: '#0288d1',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 6,
+                cursor: 'pointer',
+                width: '100%',
+              }}
+              onClick={() => alert(`You ordered ${counts[product.id] || 0} x ${product.name}`)}
+            >
+              Add To Cart
+            </button>
+          
               </Box>
             </Grid>
+            
           ))}
         </Grid>
       </Box>

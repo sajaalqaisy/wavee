@@ -40,7 +40,7 @@ export default function Footer() {
         <Link href="/shop" underline="hover" color="inherit" sx={{ mx: 1 }}>
           Shop
         </Link>
-        <Link  to=" https://sajaalqaisy.github.io/IceCreamShop/" target="_blank" rel="noopener noreferrer" underline="hover" color="inherit" sx={{ mx: 1 }}>
+       <Link href="/shop" underline="hover" color="inherit" sx={{ mx: 1 }}>
           Chill Corner
         </Link>
       </Box>
