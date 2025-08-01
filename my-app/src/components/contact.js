@@ -13,8 +13,8 @@ export default function Contact() {
     const massage = massageRef.current.value;
 
     const newErrors = {};
-    if (fullname.length < 5) {
-      newErrors.fullname = "Full name must be at least 5 characters long";
+    if (fullname.length < 9) {
+      newErrors.fullname = "Full name must be at least 9 characters long";
     }
     if (massage.length < 8) {
       newErrors.massage = "Message must be at least 8 characters long";
